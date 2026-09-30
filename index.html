@@ -1,709 +1,678 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museo Rizal: The Global Digital Experience</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        parchment: '#F9F8F6',
-                        parchmentDark: '#EFECE6',
-                        navyBlue: '#1B263B',
-                        crimsonRed: '#8B0000',
-                        crimsonHover: '#660000',
-                        goldYellow: '#D4AF37',
-                        goldHover: '#B89728',
-                    },
-                    fontFamily: {
-                        serif: ['Playfair Display', 'Georgia', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            background-color: #F9F8F6;
-            color: #1B263B;
-            font-family: 'Inter', sans-serif;
-        }
-        h1, h2, h3, h4, .font-serif {
-            font-family: 'Playfair Display', Georgia, serif;
-        }
-        .parchment-border {
-            border: 1px solid #D4AF37;
-        }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #F9F8F6;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #D4AF37;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #8B0000;
-        }
-    </style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Museo Rizal: The Global Digital Experience</title>
+   <!-- Tailwind CSS CDN -->
+   <script src="https://cdn.tailwindcss.com"></script>
+   <script>
+       tailwind.config = {
+           theme: {
+               extend: {
+                   colors: {
+                       parchment: '#F9F8F6',
+                       parchmentDark: '#EFECE6',
+                       navyBlue: '#1B263B',
+                       crimsonRed: '#8B0000',
+                       crimsonHover: '#660000',
+                       goldYellow: '#D4AF37',
+                       goldHover: '#B89728',
+                   },
+                   fontFamily: {
+                       serif: ['Playfair Display', 'Georgia', 'serif'],
+                       sans: ['Inter', 'sans-serif'],
+                   }
+               }
+           }
+       }
+   </script>
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+   <!-- FontAwesome for icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <style>
+       body {
+           background-color: #F9F8F6;
+           color: #1B263B;
+           font-family: 'Inter', sans-serif;
+       }
+       h1, h2, h3, h4, .font-serif {
+           font-family: 'Playfair Display', Georgia, serif;
+       }
+       .parchment-border {
+           border: 1px solid #D4AF37;
+       }
+       /* Custom scrollbar */
+       ::-webkit-scrollbar {
+           width: 8px;
+       }
+       ::-webkit-scrollbar-track {
+           background: #F9F8F6;
+       }
+       ::-webkit-scrollbar-thumb {
+           background: #D4AF37;
+           border-radius: 4px;
+       }
+       ::-webkit-scrollbar-thumb:hover {
+           background: #8B0000;
+       }
+   </style>
 </head>
 <body class="antialiased selection:bg-goldYellow selection:text-navyBlue">
+   <!-- Navigation Bar -->
+   <header class="fixed top-0 left-0 right-0 z-50 bg-parchment/95 backdrop-blur-md border-b border-goldYellow/40 shadow-sm transition-all duration-300">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+           <a href="#" class="flex items-center gap-3 group">
+               <div class="w-10 h-10 rounded-full bg-crimsonRed flex items-center justify-center text-goldYellow font-serif font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
+                   JR
+               </div>
+               <div>
+                   <span class="font-serif text-lg sm:text-xl font-bold text-navyBlue block leading-tight">Museo Rizal</span>
+                   <span class="text-xs text-crimsonRed uppercase tracking-widest font-semibold">Global Experience</span>
+               </div>
+           </a>
+           <!-- Desktop Nav Links -->
+           <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-navyBlue">
+               <a href="#meet-rizal" class="hover:text-crimsonRed transition-colors">Meet Rizal</a>
+               <a href="#colonial-world" class="hover:text-crimsonRed transition-colors">The Colonial World</a>
+               <a href="#literary-weapon" class="hover:text-crimsonRed transition-colors">The Literary Weapon</a>
+               <a href="#interactive-timeline" class="hover:text-crimsonRed transition-colors">Timeline</a>
+               <a href="#global-legacy" class="hover:text-crimsonRed transition-colors">Global Legacy</a>
+           </nav>
+           <!-- Mobile Menu Button -->
+           <button id="mobile-menu-btn" class="md:hidden text-navyBlue hover:text-crimsonRed p-2 focus:outline-none">
+               <i class="fa-solid fa-bars text-xl"></i>
+           </button>
+       </div>
+       <!-- Mobile Nav Menu -->
+       <div id="mobile-menu" class="hidden md:hidden bg-parchment border-b border-goldYellow/40 px-6 py-4 space-y-3">
+           <a href="#meet-rizal" class="block text-navyBlue font-medium hover:text-crimsonRed transition-colors mobile-link">Meet Rizal</a>
+           <a href="#colonial-world" class="block text-navyBlue font-medium hover:text-crimsonRed transition-colors mobile-link">The Colonial World</a>
+           <a href="#literary-weapon" class="block text-navyBlue font-medium hover:text-crimsonRed transition-colors mobile-link">The Literary Weapon</a>
+           <a href="#interactive-timeline" class="block text-navyBlue font-medium hover:text-crimsonRed transition-colors mobile-link">Timeline</a>
+           <a href="#global-legacy" class="block text-navyBlue font-medium hover:text-crimsonRed transition-colors mobile-link">Global Legacy</a>
+       </div>
+   </header>
+   <!-- Hero Section -->
+   <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-b from-parchmentDark to-parchment border-b border-goldYellow/30">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+               <div class="lg:col-span-7 space-y-6">
+                   <div class="inline-flex items-center gap-2 bg-goldYellow/20 border border-goldYellow text-navyBlue px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
+                       <i class="fa-solid fa-globe text-crimsonRed"></i> Digital Multimedia Production
+                   </div>
+                   <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-navyBlue leading-tight">
+                       Who Is José Rizal? <span class="block text-crimsonRed italic text-3xl sm:text-4xl lg:text-5xl mt-1">A Filipino Hero Explained to the World</span>
+                   </h1>
+                   <p class="text-base sm:text-lg text-navyBlue/80 italic font-serif border-l-4 border-crimsonRed pl-4 py-1">
+                       "Imagine a man who could fluently speak dozens of languages, cure eye diseases, paint masterpieces, write revolutionary novels, and master martial arts—all before the age of 35. That man was José Rizal."
+                   </p>
+                   
+                   <!-- ADDED READ MORE BUTTON HERE -->
+                   <div>
+                       <a href="https://docs.google.com/document/d/1YeqvgZCVMF5RVlzJpqNbA0LMc90Na7kDiwKWr3FzuRI/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-block bg-goldYellow hover:bg-goldHover text-navyBlue px-6 py-3 rounded-lg font-bold shadow-md transition-all">
+                           Click here to read more <i class="fa-solid fa-external-link-alt ml-1 text-xs"></i>
+                       </a>
+                   </div>
 
-    <!-- Navigation Bar -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-parchment/95 backdrop-blur-md border-b border-goldYellow/40 shadow-sm transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-full bg-crimsonRed flex items-center justify-center text-goldYellow font-serif font-bold text-lg shadow-md group-hover:scale-105 transition-transform">
-                    JR
-                </div>
-                <div>
-                    <span class="font-serif text-lg sm:text-xl font-bold text-navyBlue block leading-tight">Museo Rizal</span>
-                    <span class="text-xs text-crimsonRed uppercase tracking-widest font-semibold">Global Experience</span>
-                </div>
-            </a>
 
-            <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-navyBlue">
-                <a href="#meet-rizal" class="hover:text-crimsonRed transition-colors">Meet Rizal</a>
-                <a href="#colonial-world" class="hover:text-crimsonRed transition-colors">The Colonial World</a>
-                <a href="#literary-weapon" class="hover:text-crimsonRed transition-colors">The Literary Weapon</a>
-                <a href="#interactive-timeline" class="hover:text-crimsonRed transition-colors">Timeline</a>
-                <a href="#global-legacy" class="hover:text-crimsonRed transition-colors">Global Legacy</a>
-            </nav>
-
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-navyBlue hover:text-crimsonRed p-2 focus:outline-none">
-                <i class="fa-solid fa-bars text-xl"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Nav Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-parchment border-b border-goldYellow/40 px-6 py-4 space-y-3">
-            <a href="#meet-rizal" class="block text-navyBlue font-medium hover:text-crimsonRed transition-colors mobile-link">Meet Rizal</a>
-            <a href="#colonial-world" class="block text-navyBlue font-medium hover:text-crimsonRed transition-colors mobile-link">The Colonial World</a>
-            <a href="#literary-weapon" class="block text-navyBlue font-medium hover:text-crimsonRed transition-colors mobile-link">The Literary Weapon</a>
-            <a href="#interactive-timeline" class="block text-navyBlue font-medium hover:text-crimsonRed transition-colors mobile-link">Timeline</a>
-            <a href="#global-legacy" class="block text-navyBlue font-medium hover:text-crimsonRed transition-colors mobile-link">Global Legacy</a>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-b from-parchmentDark to-parchment border-b border-goldYellow/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 bg-goldYellow/20 border border-goldYellow text-navyBlue px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider">
-                        <i class="fa-solid fa-globe text-crimsonRed"></i> Digital Multimedia Production
-                    </div>
-                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-navyBlue leading-tight">
-                        Who Is José Rizal? <span class="block text-crimsonRed italic text-3xl sm:text-4xl lg:text-5xl mt-1">A Filipino Hero Explained to the World</span>
-                    </h1>
-                    <p class="text-base sm:text-lg text-navyBlue/80 italic font-serif border-l-4 border-crimsonRed pl-4 py-1">
-                        "Imagine a man who could fluently speak dozens of languages, cure eye diseases, paint masterpieces, write revolutionary novels, and master martial arts—all before the age of 35. That man was José Rizal."
-                    </p>
-                    <div class="flex flex-wrap gap-4 pt-4">
-                        <a href="#meet-rizal" class="bg-crimsonRed hover:bg-crimsonHover text-parchment px-6 py-3 rounded-lg font-medium shadow-md transition-all flex items-center gap-2">
-                            <span>Explore Museum</span> <i class="fa-solid fa-arrow-down text-xs"></i>
-                        </a>
-                        <a href="#interactive-timeline" class="bg-transparent hover:bg-goldYellow/10 text-navyBlue border border-goldYellow px-6 py-3 rounded-lg font-medium transition-all">
-                            View Timeline
-                        </a>
-                    </div>
-                </div>
-                <div class="lg:col-span-5 relative">
-                    <div class="relative mx-auto max-w-md lg:max-w-none">
-                        <div class="absolute -inset-2 bg-gradient-to-r from-crimsonRed to-goldYellow rounded-2xl opacity-20 blur-lg"></div>
-                        <div class="relative bg-white p-4 rounded-xl shadow-xl parchment-border">
-                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80" alt="Historical Artwork Representation" class="w-full h-80 object-cover rounded-lg shadow-inner" onerror="this.src='https://placehold.co/600x400/1B263B/F9F8F6?text=Museo+Rizal'">
-                            <div class="mt-4 text-center">
-                                <span class="text-xs font-semibold uppercase tracking-widest text-crimsonRed">Dr. José Protasio Rizal Mercado y Alonso Realonda</span>
-                                <p class="text-xs text-gray-500 mt-1">1861 – 1896 • Polymath, Martyr, Global Visionary</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 1: MEET JOSÉ RIZAL -->
-    <section id="meet-rizal" class="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs font-semibold uppercase tracking-widest text-crimsonRed block mb-2">Section 1</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navyBlue">Meet José Rizal</h2>
-            <div class="w-20 h-1 bg-goldYellow mx-auto mt-4 rounded-full"></div>
-            <p class="text-navyBlue/70 mt-4 text-sm sm:text-base">Explore the comprehensive biographical introduction of an academic polymath who shaped Philippine national consciousness.</p>
-        </div>
-
-        <!-- Bio Grid Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <!-- Full Name & Vital Stats -->
-            <div class="bg-white p-6 rounded-xl shadow-md parchment-border flex flex-col justify-between">
-                <div>
-                    <div class="w-12 h-12 rounded-lg bg-navyBlue/10 text-navyBlue flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-id-card"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold text-navyBlue mb-2">Identity & Lifespan</h3>
-                    <p class="text-sm text-navyBlue/80 mb-4">
-                        <strong class="text-crimsonRed">Born:</strong> June 19, 1861 in Calamba, Laguna.<br>
-                        <strong class="text-crimsonRed">Executed:</strong> Dec 30, 1896 in Manila (Age 35).
-                    </p>
-                    <p class="text-xs text-navyBlue/70">
-                        Full Name: Dr. José Protasio Rizal Mercado y Alonso Realonda. Born into a wealthy, respected landed middle-class family (<span class="italic">principalia</span> class).
-                    </p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-gray-100 text-xs text-crimsonRed font-semibold flex items-center gap-1">
-                    <i class="fa-solid fa-check"></i> Values: Integrity & Discipline
-                </div>
-            </div>
-
-            <!-- Education & Academic Excellence -->
-            <div class="bg-white p-6 rounded-xl shadow-md parchment-border flex flex-col justify-between">
-                <div>
-                    <div class="w-12 h-12 rounded-lg bg-navyBlue/10 text-navyBlue flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold text-navyBlue mb-2">Academic Mastery</h3>
-                    <p class="text-sm text-navyBlue/80 mb-4">
-                        Bachelor of Arts from Ateneo Municipal de Manila, medicine and philosophy at UST, and ophthalmic specialization in Madrid, Paris, and Heidelberg.
-                    </p>
-                    <p class="text-xs text-navyBlue/70">
-                        A true academic polymath who bridged Eastern and Western scientific thought during the late 19th century.
-                    </p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-gray-100 text-xs text-crimsonRed font-semibold flex items-center gap-1">
-                    <i class="fa-solid fa-check"></i> Global Scholar
-                </div>
-            </div>
-
-            <!-- Languages & Intellect -->
-            <div class="bg-white p-6 rounded-xl shadow-md parchment-border flex flex-col justify-between">
-                <div>
-                    <div class="w-12 h-12 rounded-lg bg-navyBlue/10 text-navyBlue flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-language"></i>
-                    </div>
-                    <h3 class="font-serif text-xl font-bold text-navyBlue mb-2">Polyglot & Polymath</h3>
-                    <p class="text-sm text-navyBlue/80 mb-4">
-                        Proficient in <strong class="text-crimsonRed">over 20 languages</strong> including Spanish, French, German, English, Tagalog, Latin, Greek, Hebrew, and Japanese.
-                    </p>
-                    <p class="text-xs text-navyBlue/70">
-                        Expertise spanning anthropology, botany, ophthalmology, sociology, and political philosophy.
-                    </p>
-                </div>
-                <div class="mt-6 pt-4 border-t border-gray-100 text-xs text-crimsonRed font-semibold flex items-center gap-1">
-                    <i class="fa-solid fa-check"></i> 20+ Languages Mastered
-                </div>
-            </div>
-        </div>
-
-        <!-- Interactive Hats/Roles Tab Switcher -->
-        <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 parchment-border">
-            <h3 class="font-serif text-2xl font-bold text-navyBlue text-center mb-6">Explore Rizal's Multifaceted Roles</h3>
-            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8" id="hats-tabs">
-                <button onclick="switchHat('doctor')" class="hat-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-crimsonRed text-parchment shadow" data-target="doctor">The Doctor</button>
-                <button onclick="switchHat('novelist')" class="hat-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-parchmentDark text-navyBlue hover:bg-goldYellow/30" data-target="novelist">The Novelist & Writer</button>
-                <button onclick="switchHat('artist')" class="hat-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-parchmentDark text-navyBlue hover:bg-goldYellow/30" data-target="artist">The Artist & Sculptor</button>
-                <button onclick="switchHat('scientist')" class="hat-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-parchmentDark text-navyBlue hover:bg-goldYellow/30" data-target="scientist">The Scientist & Naturalist</button>
-            </div>
-
-            <!-- Hat Content Panels -->
-            <div id="hat-content" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <span class="text-xs uppercase tracking-widest text-crimsonRed font-bold block mb-1">Medical Profession</span>
-                    <h4 class="font-serif text-2xl font-bold text-navyBlue mb-4" id="hat-title">Ophthalmologist & Humanitarian</h4>
-                    <p class="text-navyBlue/80 text-sm sm:text-base leading-relaxed mb-4" id="hat-desc">
-                        Specialized in ophthalmology in Europe under renowned specialists like Dr. Louis de Wecker. He practiced medicine across Europe and notably in Dapitan, treating local patients and impoverished families for free, restoring sight to many, including his own mother.
-                    </p>
-                    <ul class="space-y-2 text-xs sm:text-sm text-navyBlue/80" id="hat-bullets">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimsonRed"></i> Studied under top European eye surgeons</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimsonRed"></i> Provided free medical care to the poor in Dapitan</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimsonRed"></i> Performed delicate eye surgeries with extreme precision</li>
-                    </ul>
-                </div>
-                <div class="relative">
-                    <img id="hat-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Medical Practice" class="rounded-xl shadow-md w-full h-64 object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 2: UNDERSTAND HIS WORLD -->
-    <section id="colonial-world" class="py-20 bg-parchmentDark border-y border-goldYellow/30">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-semibold uppercase tracking-widest text-crimsonRed block mb-2">Section 2</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navyBlue">Understand His World</h2>
-                <div class="w-20 h-1 bg-goldYellow mx-auto mt-4 rounded-full"></div>
-                <p class="text-navyBlue/70 mt-4 text-sm sm:text-base">Examine the complex social, political, and cultural factors that shaped the 19th-century Philippines under Spanish rule.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Card 1 -->
-                <div class="bg-white p-6 rounded-xl shadow-md parchment-border hover:shadow-lg transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-lg bg-crimsonRed/10 text-crimsonRed flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-landmark"></i>
-                        </div>
-                        <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">Spanish Colonial Rule</h3>
-                        <p class="text-xs sm:text-sm text-navyBlue/80 mb-4">
-                            For over 300 years, the Philippines was ruled by the Spanish Empire. Governance was authoritarian, rigid, and heavily militarized.
-                        </p>
-                    </div>
-                    <span class="text-xs text-crimsonRed font-semibold uppercase tracking-wider">300+ Years of Rule</span>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="bg-white p-6 rounded-xl shadow-md parchment-border hover:shadow-lg transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-lg bg-crimsonRed/10 text-crimsonRed flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-users-rectangle"></i>
-                        </div>
-                        <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">Rigid Social Hierarchy</h3>
-                        <p class="text-xs sm:text-sm text-navyBlue/80 mb-4">
-                            Peninsulares & Insulares at the top, mestizos in the middle, and native inhabitants derogatorily called <span class="italic">Indios</span> at the bottom.
-                        </p>
-                    </div>
-                    <span class="text-xs text-crimsonRed font-semibold uppercase tracking-wider">Caste System</span>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-white p-6 rounded-xl shadow-md parchment-border hover:shadow-lg transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-lg bg-crimsonRed/10 text-crimsonRed flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-church"></i>
-                        </div>
-                        <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">The Friarocracy</h3>
-                        <p class="text-xs sm:text-sm text-navyBlue/80 mb-4">
-                            Spanish friars held immense political, economic, and spiritual power, controlling local governance, land ownership, and rigorous censorship.
-                        </p>
-                    </div>
-                    <span class="text-xs text-crimsonRed font-semibold uppercase tracking-wider">Clerical Monopoly</span>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="bg-white p-6 rounded-xl shadow-md parchment-border hover:shadow-lg transition-all flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 rounded-lg bg-crimsonRed/10 text-crimsonRed flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-lightbulb"></i>
-                        </div>
-                        <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">Rise of the Ilustrados</h3>
-                        <p class="text-xs sm:text-sm text-navyBlue/80 mb-4">
-                            The Suez Canal opened global trade. Wealthy families sent sons to Europe, exposing them to liberalism, democracy, and human rights.
-                        </p>
-                    </div>
-                    <span class="text-xs text-crimsonRed font-semibold uppercase tracking-wider">The Enlightened</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 3: RIZAL THE WRITER -->
-    <section id="literary-weapon" class="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs font-semibold uppercase tracking-widest text-crimsonRed block mb-2">Section 3</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navyBlue">Rizal the Writer</h2>
-            <div class="w-20 h-1 bg-goldYellow mx-auto mt-4 rounded-full"></div>
-            <p class="text-navyBlue/70 mt-4 text-sm sm:text-base">"La pluma es más fuerte que la espada." Discover the two revolutionary novels that acted as a social earthquake across the Philippines.</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <!-- Noli Me Tangere -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg parchment-border flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="bg-crimsonRed/10 text-crimsonRed text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Published 1887</span>
-                        <span class="font-serif italic text-sm text-navyBlue/60">"Touch Me Not"</span>
-                    </div>
-                    <h3 class="font-serif text-2xl font-bold text-navyBlue mb-3">Noli Me Tangere</h3>
-                    <p class="text-sm text-navyBlue/80 mb-4 leading-relaxed">
-                        A social novel exposing systemic corruption, the abuse of power by the friars, and the tragic backwardness of colonial society. It ripped away the veil of ignorance.
-                    </p>
-                    <div class="space-y-2 mb-6 text-xs sm:text-sm text-navyBlue/80">
-                        <p><strong>Major Themes:</strong> Religious fanaticism, systemic oppression, and a sleeping society.</p>
-                        <p><strong>Key Characters:</strong> Crisóstomo Ibarra, María Clara, Padre Dámaso, Elias.</p>
-                    </div>
-                </div>
-                <button onclick="openCharacterModal('noli')" class="w-full bg-navyBlue hover:bg-navyBlue/90 text-parchment py-2.5 rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-users"></i> Explore Noli Characters
-                </button>
-            </div>
-
-            <!-- El Filibusterismo -->
-            <div class="bg-white p-8 rounded-2xl shadow-lg parchment-border flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="bg-crimsonRed/10 text-crimsonRed text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Published 1891</span>
-                        <span class="font-serif italic text-sm text-navyBlue/60">"The Reign of Greed"</span>
-                    </div>
-                    <h3 class="font-serif text-2xl font-bold text-navyBlue mb-3">El Filibusterismo</h3>
-                    <p class="text-sm text-navyBlue/80 mb-4 leading-relaxed">
-                        A darker, political sequel dedicated to the three martyred priests (Gomburza). It explores the limits of peaceful reform and the dangerous paths of radical vengeance.
-                    </p>
-                    <div class="space-y-2 mb-6 text-xs sm:text-sm text-navyBlue/80">
-                        <p><strong>Major Themes:</strong> Futility of violent extremism, disillusionment, structural change.</p>
-                        <p><strong>Key Characters:</strong> Simoun, Basilio, Isagani, Padre Salví.</p>
-                    </div>
-                </div>
-                <button onclick="openCharacterModal('fili')" class="w-full bg-navyBlue hover:bg-navyBlue/90 text-parchment py-2.5 rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-users"></i> Explore Fili Characters
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 4: THE INTERACTIVE TIMELINE & HISTORICAL BRIDGE -->
-    <section id="interactive-timeline" class="py-20 bg-parchmentDark border-t border-goldYellow/30">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-xs font-semibold uppercase tracking-widest text-crimsonRed block mb-2">Section 4</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navyBlue">The Interactive Timeline & Historical Bridge</h2>
-                <div class="w-20 h-1 bg-goldYellow mx-auto mt-4 rounded-full"></div>
-                <p class="text-navyBlue/70 mt-4 text-sm sm:text-base">Journey through key milestones in Rizal's life and click to reveal deep historical and global connections.</p>
-            </div>
-
-            <!-- Timeline Container -->
-            <div class="relative border-l-2 border-goldYellow/60 ml-4 md:ml-32 space-y-12">
-                
-                <!-- Event 1 -->
-                <div class="relative pl-8 sm:pl-10">
-                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-crimsonRed border-2 border-white shadow"></div>
-                    <div class="md:absolute md:-left-32 md:top-1 md:text-right md:w-24 text-xs font-bold text-crimsonRed uppercase tracking-wider">June 19, 1861</div>
-                    <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
-                        <h3 class="font-serif text-xl font-bold text-navyBlue mb-2">The Birth of a Polymath</h3>
-                        <p class="text-sm text-navyBlue/80 mb-4">
-                            José Rizal is born in Calamba, Laguna, into a transforming global era. Mid-19th-century nationalism is reshaping Europe, paving the way for future intellectual enlightenments.
-                        </p>
-                        <button onclick="toggleTimelineContext('ctx-1')" id="btn-ctx-1" class="text-xs font-semibold text-crimsonRed hover:text-crimsonHover flex items-center gap-1 focus:outline-none">
-                            <i class="fa-solid fa-plus-circle"></i> [ + Reveal Historical Context ]
-                        </button>
-                        <div id="ctx-1" class="hidden mt-4 pt-4 border-t border-gray-100 text-xs sm:text-sm text-navyBlue/80 bg-parchmentDark p-4 rounded-lg">
-                            <strong class="text-crimsonRed block mb-1">Deep Analytical Insight:</strong>
-                            Rizal's birth coincided with the modernization of global trade networks. His family's status as leaseholders on Dominican haciendas gave him a front-row seat to agrarian exploitation, grounding his global philosophy in local realities.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Event 2 -->
-                <div class="relative pl-8 sm:pl-10">
-                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-crimsonRed border-2 border-white shadow"></div>
-                    <div class="md:absolute md:-left-32 md:top-1 md:text-right md:w-24 text-xs font-bold text-crimsonRed uppercase tracking-wider">July 1892</div>
-                    <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
-                        <h3 class="font-serif text-xl font-bold text-navyBlue mb-2">Arrest and Exile in Dapitan</h3>
-                        <p class="text-sm text-navyBlue/80 mb-4">
-                            Following his return to Manila and the founding of the peaceful civic organization <em>La Liga Filipina</em>, Rizal is arrested by Spanish authorities and ordered exiled.
-                        </p>
-                        <button onclick="toggleTimelineContext('ctx-2')" id="btn-ctx-2" class="text-xs font-semibold text-crimsonRed hover:text-crimsonHover flex items-center gap-1 focus:outline-none">
-                            <i class="fa-solid fa-plus-circle"></i> [ + Reveal Historical Context ]
-                        </button>
-                        <div id="ctx-2" class="hidden mt-4 pt-4 border-t border-gray-100 text-xs sm:text-sm text-navyBlue/80 bg-parchmentDark p-4 rounded-lg">
-                            <strong class="text-crimsonRed block mb-1">Deep Analytical Insight:</strong>
-                            His exile to Dapitan was meant to silence him, but Rizal transformed a remote frontier town into a living laboratory of community development—building water systems, founding schools, and practicing free medicine.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Event 3 -->
-                <div class="relative pl-8 sm:pl-10">
-                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-crimsonRed border-2 border-white shadow"></div>
-                    <div class="md:absolute md:-left-32 md:top-1 md:text-right md:w-24 text-xs font-bold text-crimsonRed uppercase tracking-wider">Oct – Nov 1896</div>
-                    <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
-                        <h3 class="font-serif text-xl font-bold text-navyBlue mb-2">Arrest at Sea & Return to Manila</h3>
-                        <p class="text-sm text-navyBlue/80 mb-4">
-                            En route to Cuba to volunteer as a military doctor, Rizal is arrested mid-voyage, brought back to Manila, and imprisoned in Fort Santiago under charges of rebellion.
-                        </p>
-                        <button onclick="toggleTimelineContext('ctx-3')" id="btn-ctx-3" class="text-xs font-semibold text-crimsonRed hover:text-crimsonHover flex items-center gap-1 focus:outline-none">
-                            <i class="fa-solid fa-plus-circle"></i> [ + Reveal Historical Context ]
-                        </button>
-                        <div id="ctx-3" class="hidden mt-4 pt-4 border-t border-gray-100 text-xs sm:text-sm text-navyBlue/80 bg-parchmentDark p-4 rounded-lg">
-                            <strong class="text-crimsonRed block mb-1">Deep Analytical Insight:</strong>
-                            Rizal's stance on revolution was nuanced: he never opposed ultimate independence, but he famously argued that freedom without education and national unity is merely a transition to a new form of tyranny.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Event 4 -->
-                <div class="relative pl-8 sm:pl-10">
-                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-crimsonRed border-2 border-white shadow"></div>
-                    <div class="md:absolute md:-left-32 md:top-1 md:text-right md:w-24 text-xs font-bold text-crimsonRed uppercase tracking-wider">Dec 30, 1896</div>
-                    <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
-                        <h3 class="font-serif text-xl font-bold text-navyBlue mb-2">Execution at Bagumbayan</h3>
-                        <p class="text-sm text-navyBlue/80 mb-4">
-                            Executed by a Spanish firing squad at age 35. As the bullets strike, he turns his body upward to face the morning sun—symbolizing the dawn of a new nation.
-                        </p>
-                        <button onclick="toggleTimelineContext('ctx-4')" id="btn-ctx-4" class="text-xs font-semibold text-crimsonRed hover:text-crimsonHover flex items-center gap-1 focus:outline-none">
-                            <i class="fa-solid fa-plus-circle"></i> [ + Reveal Historical Context ]
-                        </button>
-                        <div id="ctx-4" class="hidden mt-4 pt-4 border-t border-gray-100 text-xs sm:text-sm text-navyBlue/80 bg-parchmentDark p-4 rounded-lg">
-                            <strong class="text-crimsonRed block mb-1">Deep Analytical Insight:</strong>
-                            Hours before his death, he hid his final poetic masterpiece, <em>Mi Último Adiós</em> (My Last Farewell), inside an alcohol cooking stove—ensuring his voice outlived his executioners.
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 5: WHY DOES RIZAL MATTER TODAY? -->
-    <section id="global-legacy" class="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs font-semibold uppercase tracking-widest text-crimsonRed block mb-2">Section 5</span>
-            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navyBlue">Why Does Rizal Matter Today?</h2>
-            <div class="w-20 h-1 bg-goldYellow mx-auto mt-4 rounded-full"></div>
-            <p class="text-navyBlue/70 mt-4 text-sm sm:text-base">Connecting 19th-century history to contemporary global and local civic consciousness.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
-                <div class="w-12 h-12 rounded-lg bg-navyBlue/10 text-navyBlue flex items-center justify-center text-xl mb-4">
-                    <i class="fa-solid fa-book-open-reader"></i>
-                </div>
-                <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">Education & Critical Thinking</h3>
-                <p class="text-xs sm:text-sm text-navyBlue/80">
-                    Proved that the greatest tool against tyranny is an educated mind, inspiring media literacy and resistance against fake news.
-                </p>
-            </div>
-
-            <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
-                <div class="w-12 h-12 rounded-lg bg-navyBlue/10 text-navyBlue flex items-center justify-center text-xl mb-4">
-                    <i class="fa-solid fa-scale-balanced"></i>
-                </div>
-                <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">Responsible Citizenship</h3>
-                <p class="text-xs sm:text-sm text-navyBlue/80">
-                    True patriotism is not dying for one's country, but living honestly, working ethically, and serving the community daily.
-                </p>
-            </div>
-
-            <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
-                <div class="w-12 h-12 rounded-lg bg-navyBlue/10 text-navyBlue flex items-center justify-center text-xl mb-4">
-                    <i class="fa-solid fa-hands-holding-child"></i>
-                </div>
-                <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">Social Justice & Freedom</h3>
-                <p class="text-xs sm:text-sm text-navyBlue/80">
-                    His writings remind every generation to stand up against systemic corruption and give a voice to the marginalized.
-                </p>
-            </div>
-
-            <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
-                <div class="w-12 h-12 rounded-lg bg-navyBlue/10 text-navyBlue flex items-center justify-center text-xl mb-4">
-                    <i class="fa-solid fa-feather"></i>
-                </div>
-                <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">The Power of Ideas</h3>
-                <p class="text-xs sm:text-sm text-navyBlue/80">
-                    Proved that a single pen fueled by truth and empathy can dismantle oppressive empires more effectively than violence.
-                </p>
-            </div>
-        </div>
-
-        <!-- References / Credits Slide -->
-        <div class="bg-parchmentDark rounded-2xl p-8 sm:p-12 parchment-border">
-            <h3 class="font-serif text-2xl font-bold text-navyBlue mb-6 text-center">References & Academic Citations</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-navyBlue/80">
-                <div class="bg-white p-4 rounded-xl shadow-sm">
-                    <strong class="text-crimsonRed block mb-1">National Historical Commission of the Philippines (NHCP)</strong>
-                    The Life and Writings of José Rizal. Official historical archives and educational dossiers.
-                </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm">
-                    <strong class="text-crimsonRed block mb-1">Zaide, Gregorio F., and Sonia M. Zaide</strong>
-                    José Rizal: Life, Works, and Writings of a Genius, Writer, Scientist, and National Hero. All-Nations Publishing.
-                </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm">
-                    <strong class="text-crimsonRed block mb-1">Austin Coates</strong>
-                    Rizal: Philippine Nationalist and Martyr. Oxford University Press.
-                </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm">
-                    <strong class="text-crimsonRed block mb-1">The National Library of the Philippines</strong>
-                    Digital Collections: Original Manuscripts and Letters of José Rizal.
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-navyBlue text-parchment py-12 border-t-2 border-goldYellow">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-            <div>
-                <h4 class="font-serif text-xl font-bold text-goldYellow">Museo Rizal: The Global Digital Experience</h4>
-                <p class="text-xs text-parchment/70 mt-1">A Digital Multimedia Production Guide for International Audiences.</p>
-            </div>
-            <div class="text-goldYellow font-serif font-bold text-lg tracking-wider bg-navyBlue/80 px-6 py-3 rounded-xl border border-goldYellow/40 shadow-inner">
-                OT-1A Group 8
-            </div>
-        </div>
-    </footer>
-
-    <!-- Character Modal -->
-    <div id="character-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-parchment rounded-2xl max-w-2xl w-full p-6 sm:p-8 relative parchment-border shadow-2xl">
-            <button onclick="closeCharacterModal()" class="absolute top-4 right-4 text-navyBlue hover:text-crimsonRed text-xl">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div id="modal-content">
-                <!-- Dynamically populated -->
-            </div>
-        </div>
-    </div>
-
-    <!-- JavaScript Logic -->
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu on link click
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Section 1 Hats switcher data
-        const hatData = {
-            doctor: {
-                title: "Ophthalmologist & Humanitarian",
-                desc: "Specialized in ophthalmology in Europe under renowned specialists like Dr. Louis de Wecker. He practiced medicine across Europe and notably in Dapitan, treating local patients and impoverished families for free, restoring sight to many, including his own mother.",
-                bullets: [
-                    "Studied under top European eye surgeons",
-                    "Provided free medical care to the poor in Dapitan",
-                    "Performed delicate eye surgeries with extreme precision"
-                ],
-                img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80"
-            },
-            novelist: {
-                title: "Novelist & Literary Master",
-                desc: "Chose literature as a peaceful weapon (la pluma es más fuerte que la espada) to expose the cancer gnawing at Filipino society, awaken national consciousness, and demand reforms from the Spanish government through immortal works like Noli Me Tangere and El Filibusterismo.",
-                bullets: [
-                    "Authored Noli Me Tangere (1887) exposing clerical abuse",
-                    "Authored El Filibusterismo (1891) exploring political revolution",
-                    "Used biting satire and realistic social commentary"
-                ],
-                img: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80"
-            },
-            artist: {
-                title: "Sculptor, Painter & Linguist",
-                desc: "A gifted visual artist who created remarkable sculptures (such as The Triumph of Science Over Death) and sketches. He was also a polyglot proficient in over 20 languages, seamlessly bridging global cultures.",
-                bullets: [
-                    "Created intricate clay and wood sculptures",
-                    "Mastered over 20 languages including Hebrew and Greek",
-                    "Sketched landscapes and anatomical studies across Europe"
-                ],
-                img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80"
-            },
-            scientist: {
-                title: "Scientist, Agronomist & Naturalist",
-                desc: "During his exile in Dapitan, Rizal collected botanical and zoological specimens, discovering new species of animals (like a frog, beetle, and flying dragon named after him) while introducing modern agricultural techniques.",
-                bullets: [
-                    "Discovered new species during Dapitan exile",
-                    "Designed a modern local water supply and lighting system",
-                    "Advocated for scientific agricultural practices"
-                ],
-                img: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80"
-            }
-        };
-
-        function switchHat(type) {
-            // Update button styles
-            document.querySelectorAll('.hat-tab').forEach(btn => {
-                if (btn.getAttribute('data-target') === type) {
-                    btn.classList.remove('bg-parchmentDark', 'text-navyBlue');
-                    btn.classList.add('bg-crimsonRed', 'text-parchment', 'shadow');
-                } else {
-                    btn.classList.remove('bg-crimsonRed', 'text-parchment', 'shadow');
-                    btn.classList.add('bg-parchmentDark', 'text-navyBlue');
-                }
-            });
-
-            // Update content
-            const data = hatData[type];
-            document.getElementById('hat-title').innerText = data.title;
-            document.getElementById('hat-desc').innerText = data.desc;
-            document.getElementById('hat-img').src = data.img;
-            
-            const bulletsContainer = document.getElementById('hat-bullets');
-            bulletsContainer.innerHTML = '';
-            data.bullets.forEach(bullet => {
-                const li = document.createElement('li');
-                li.className = 'flex items-center gap-2';
-                li.innerHTML = `<i class="fa-solid fa-circle-check text-crimsonRed"></i> ${bullet}`;
-                bulletsContainer.appendChild(li);
-            });
-        }
-
-        // Timeline context toggle
-        function toggleTimelineContext(id) {
-            const el = document.getElementById(id);
-            const btn = document.getElementById('btn-' + id);
-            if (el.classList.contains('hidden')) {
-                el.classList.remove('hidden');
-                btn.innerHTML = '<i class="fa-solid fa-minus-circle"></i> [ - Hide Historical Context ]';
-            } else {
-                el.classList.add('hidden');
-                btn.innerHTML = '<i class="fa-solid fa-plus-circle"></i> [ + Reveal Historical Context ]';
-            }
-        }
-
-        // Character modal data
-        const characterData = {
-            noli: {
-                title: "Noli Me Tangere (1887) - Character Spotlight",
-                chars: [
-                    { name: "Crisóstomo Ibarra", role: "The idealistic reformer seeking education and peaceful progress for his people." },
-                    { name: "María Clara", role: "The tragic symbol of the pure Filipina and the colonized nation." },
-                    { name: "Padre Dámaso", role: "The corrupt, arrogant friar representing clerical tyranny." },
-                    { name: "Elias", role: "The revolutionary skeptic who believes reform from within is impossible." }
-                ]
-            },
-            fili: {
-                title: "El Filibusterismo (1891) - Character Spotlight",
-                chars: [
-                    { name: "Simoun", role: "Ibarra returned in disguise as a wealthy, vengeful jeweler plotting armed rebellion." },
-                    { name: "Basilio", role: "The student whose tragic suffering mirrors the broken hopes of the youth." },
-                    { name: "Isagani", role: "The idealistic student poet caught between love and nationalism." },
-                    { name: "Padre Salví", role: "The cunning and sinister cleric representing religious hypocrisy." }
-                ]
-            }
-        };
-
-        function openCharacterModal(type) {
-            const data = characterData[type];
-            let html = `<h3 class="font-serif text-2xl font-bold text-navyBlue mb-4">${data.title}</h3><div class="space-y-4">`;
-            data.chars.forEach(c => {
-                html += `<div class="bg-white p-4 rounded-xl shadow-sm border border-goldYellow/40">
-                    <strong class="text-crimsonRed font-serif text-lg block mb-1">${c.name}</strong>
-                    <p class="text-xs sm:text-sm text-navyBlue/80">${c.role}</p>
-                </div>`;
-            });
-            html += `</div>`;
-            document.getElementById('modal-content').innerHTML = html;
-            document.getElementById('character-modal').classList.remove('hidden');
-        }
-
-        function closeCharacterModal() {
-            document.getElementById('character-modal').classList.add('hidden');
-        }
-
-        // Close modal on outside click
-        window.addEventListener('click', (e) => {
-            const modal = document.getElementById('character-modal');
-            if (e.target === modal) {
-                closeCharacterModal();
-            }
-        });
-    </script>
+                   <div class="flex flex-wrap gap-4 pt-4">
+                       <a href="#meet-rizal" class="bg-crimsonRed hover:bg-crimsonHover text-parchment px-6 py-3 rounded-lg font-medium shadow-md transition-all flex items-center gap-2">
+                           <span>Explore Museum</span> <i class="fa-solid fa-arrow-down text-xs"></i>
+                       </a>
+                       <a href="#interactive-timeline" class="bg-transparent hover:bg-goldYellow/10 text-navyBlue border border-goldYellow px-6 py-3 rounded-lg font-medium transition-all">
+                           View Timeline
+                       </a>
+                   </div>
+               </div>
+               <div class="lg:col-span-5 relative">
+                   <div class="relative mx-auto max-w-md lg:max-w-none">
+                       <div class="absolute -inset-2 bg-gradient-to-r from-crimsonRed to-goldYellow rounded-2xl opacity-20 blur-lg"></div>
+                       <div class="relative bg-white p-4 rounded-xl shadow-xl parchment-border">
+                           <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80" alt="Historical Artwork Representation" class="w-full h-80 object-cover rounded-lg shadow-inner" onerror="this.src='https://placehold.co/600x400/1B263B/F9F8F6?text=Museo+Rizal'">
+                           <div class="mt-4 text-center">
+                               <span class="text-xs font-semibold uppercase tracking-widest text-crimsonRed">Dr. José Protasio Rizal Mercado y Alonso Realonda</span>
+                               <p class="text-xs text-gray-500 mt-1">1861 – 1896 • Polymath, Martyr, Global Visionary</p>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+   <!-- SECTION 1: MEET JOSÉ RIZAL -->
+   <section id="meet-rizal" class="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="text-center max-w-3xl mx-auto mb-16">
+           <span class="text-xs font-semibold uppercase tracking-widest text-crimsonRed block mb-2">Section 1</span>
+           <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navyBlue">Meet José Rizal</h2>
+           <div class="w-20 h-1 bg-goldYellow mx-auto mt-4 rounded-full"></div>
+           <p class="text-navyBlue/70 mt-4 text-sm sm:text-base">Explore the comprehensive biographical introduction of an academic polymath who shaped Philippine national consciousness.</p>
+       </div>
+       <!-- Bio Grid Cards -->
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+           <!-- Full Name & Vital Stats -->
+           <div class="bg-white p-6 rounded-xl shadow-md parchment-border flex flex-col justify-between">
+               <div>
+                   <div class="w-12 h-12 rounded-lg bg-navyBlue/10 text-navyBlue flex items-center justify-center text-xl mb-4">
+                       <i class="fa-solid fa-id-card"></i>
+                   </div>
+                   <h3 class="font-serif text-xl font-bold text-navyBlue mb-2">Identity & Lifespan</h3>
+                   <p class="text-sm text-navyBlue/80 mb-4">
+                       <strong class="text-crimsonRed">Born:</strong> June 19, 1861 in Calamba, Laguna.<br>
+                       <strong class="text-crimsonRed">Executed:</strong> Dec 30, 1896 in Manila (Age 35).
+                   </p>
+                   <p class="text-xs text-navyBlue/70">
+                       Full Name: Dr. José Protasio Rizal Mercado y Alonso Realonda. Born into a wealthy, respected landed middle-class family (<span class="italic">principalia</span> class).
+                   </p>
+               </div>
+               <div class="mt-6 pt-4 border-t border-gray-100 text-xs text-crimsonRed font-semibold flex items-center gap-1">
+                   <i class="fa-solid fa-check"></i> Values: Integrity & Discipline
+               </div>
+           </div>
+           <!-- Education & Academic Excellence -->
+           <div class="bg-white p-6 rounded-xl shadow-md parchment-border flex flex-col justify-between">
+               <div>
+                   <div class="w-12 h-12 rounded-lg bg-navyBlue/10 text-navyBlue flex items-center justify-center text-xl mb-4">
+                       <i class="fa-solid fa-graduation-cap"></i>
+                   </div>
+                   <h3 class="font-serif text-xl font-bold text-navyBlue mb-2">Academic Mastery</h3>
+                   <p class="text-sm text-navyBlue/80 mb-4">
+                       Bachelor of Arts from Ateneo Municipal de Manila, medicine and philosophy at UST, and ophthalmic specialization in Madrid, Paris, and Heidelberg.
+                   </p>
+                   <p class="text-xs text-navyBlue/70">
+                       A true academic polymath who bridged Eastern and Western scientific thought during the late 19th century.
+                   </p>
+               </div>
+               <div class="mt-6 pt-4 border-t border-gray-100 text-xs text-crimsonRed font-semibold flex items-center gap-1">
+                   <i class="fa-solid fa-check"></i> Global Scholar
+               </div>
+           </div>
+           <!-- Languages & Intellect -->
+           <div class="bg-white p-6 rounded-xl shadow-md parchment-border flex flex-col justify-between">
+               <div>
+                   <div class="w-12 h-12 rounded-lg bg-navyBlue/10 text-navyBlue flex items-center justify-center text-xl mb-4">
+                       <i class="fa-solid fa-language"></i>
+                   </div>
+                   <h3 class="font-serif text-xl font-bold text-navyBlue mb-2">Polyglot & Polymath</h3>
+                   <p class="text-sm text-navyBlue/80 mb-4">
+                       Proficient in <strong class="text-crimsonRed">over 20 languages</strong> including Spanish, French, German, English, Tagalog, Latin, Greek, Hebrew, and Japanese.
+                   </p>
+                   <p class="text-xs text-navyBlue/70">
+                       Expertise spanning anthropology, botany, ophthalmology, sociology, and political philosophy.
+                   </p>
+               </div>
+               <div class="mt-6 pt-4 border-t border-gray-100 text-xs text-crimsonRed font-semibold flex items-center gap-1">
+                   <i class="fa-solid fa-check"></i> 20+ Languages Mastered
+               </div>
+           </div>
+       </div>
+       <!-- Interactive Hats/Roles Tab Switcher -->
+       <div class="bg-white rounded-2xl shadow-lg p-6 sm:p-8 parchment-border">
+           <h3 class="font-serif text-2xl font-bold text-navyBlue text-center mb-6">Explore Rizal's Multifaceted Roles</h3>
+           <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8" id="hats-tabs">
+               <button onclick="switchHat('doctor')" class="hat-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-crimsonRed text-parchment shadow" data-target="doctor">The Doctor</button>
+               <button onclick="switchHat('novelist')" class="hat-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-parchmentDark text-navyBlue hover:bg-goldYellow/30" data-target="novelist">The Novelist & Writer</button>
+               <button onclick="switchHat('artist')" class="hat-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-parchmentDark text-navyBlue hover:bg-goldYellow/30" data-target="artist">The Artist & Sculptor</button>
+               <button onclick="switchHat('scientist')" class="hat-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all bg-parchmentDark text-navyBlue hover:bg-goldYellow/30" data-target="scientist">The Scientist & Naturalist</button>
+           </div>
+           <!-- Hat Content Panels -->
+           <div id="hat-content" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+               <div>
+                   <span class="text-xs uppercase tracking-widest text-crimsonRed font-bold block mb-1">Medical Profession</span>
+                   <h4 class="font-serif text-2xl font-bold text-navyBlue mb-4" id="hat-title">Ophthalmologist & Humanitarian</h4>
+                   <p class="text-navyBlue/80 text-sm sm:text-base leading-relaxed mb-4" id="hat-desc">
+                       Specialized in ophthalmology in Europe under renowned specialists like Dr. Louis de Wecker. He practiced medicine across Europe and notably in Dapitan, treating local patients and impoverished families for free, restoring sight to many, including his own mother.
+                   </p>
+                   <ul class="space-y-2 text-xs sm:text-sm text-navyBlue/80" id="hat-bullets">
+                       <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimsonRed"></i> Studied under top European eye surgeons</li>
+                       <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimsonRed"></i> Provided free medical care to the poor in Dapitan</li>
+                       <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-crimsonRed"></i> Performed delicate eye surgeries with extreme precision</li>
+                   </ul>
+               </div>
+               <div class="relative">
+                   <img id="hat-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Medical Practice" class="rounded-xl shadow-md w-full h-64 object-cover">
+               </div>
+           </div>
+       </div>
+   </section>
+   <!-- SECTION 2: UNDERSTAND HIS WORLD -->
+   <section id="colonial-world" class="py-20 bg-parchmentDark border-y border-goldYellow/30">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           <div class="text-center max-w-3xl mx-auto mb-16">
+               <span class="text-xs font-semibold uppercase tracking-widest text-crimsonRed block mb-2">Section 2</span>
+               <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navyBlue">Understand His World</h2>
+               <div class="w-20 h-1 bg-goldYellow mx-auto mt-4 rounded-full"></div>
+               <p class="text-navyBlue/70 mt-4 text-sm sm:text-base">Examine the complex social, political, and cultural factors that shaped the 19th-century Philippines under Spanish rule.</p>
+           </div>
+           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+               <!-- Card 1 -->
+               <div class="bg-white p-6 rounded-xl shadow-md parchment-border hover:shadow-lg transition-all flex flex-col justify-between">
+                   <div>
+                       <div class="w-12 h-12 rounded-lg bg-crimsonRed/10 text-crimsonRed flex items-center justify-center text-xl mb-4">
+                           <i class="fa-solid fa-landmark"></i>
+                       </div>
+                       <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">Spanish Colonial Rule</h3>
+                       <p class="text-xs sm:text-sm text-navyBlue/80 mb-4">
+                           For over 300 years, the Philippines was ruled by the Spanish Empire. Governance was authoritarian, rigid, and heavily militarized.
+                       </p>
+                   </div>
+                   <span class="text-xs text-crimsonRed font-semibold uppercase tracking-wider">300+ Years of Rule</span>
+               </div>
+               <!-- Card 2 -->
+               <div class="bg-white p-6 rounded-xl shadow-md parchment-border hover:shadow-lg transition-all flex flex-col justify-between">
+                   <div>
+                       <div class="w-12 h-12 rounded-lg bg-crimsonRed/10 text-crimsonRed flex items-center justify-center text-xl mb-4">
+                           <i class="fa-solid fa-users-rectangle"></i>
+                       </div>
+                       <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">Rigid Social Hierarchy</h3>
+                       <p class="text-xs sm:text-sm text-navyBlue/80 mb-4">
+                           Peninsulares & Insulares at the top, mestizos in the middle, and native inhabitants derogatorily called <span class="italic">Indios</span> at the bottom.
+                       </p>
+                   </div>
+                   <span class="text-xs text-crimsonRed font-semibold uppercase tracking-wider">Caste System</span>
+               </div>
+               <!-- Card 3 -->
+               <div class="bg-white p-6 rounded-xl shadow-md parchment-border hover:shadow-lg transition-all flex flex-col justify-between">
+                   <div>
+                       <div class="w-12 h-12 rounded-lg bg-crimsonRed/10 text-crimsonRed flex items-center justify-center text-xl mb-4">
+                           <i class="fa-solid fa-church"></i>
+                       </div>
+                       <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">The Friarocracy</h3>
+                       <p class="text-xs sm:text-sm text-navyBlue/80 mb-4">
+                           Spanish friars held immense political, economic, and spiritual power, controlling local governance, land ownership, and rigorous censorship.
+                       </p>
+                   </div>
+                   <span class="text-xs text-crimsonRed font-semibold uppercase tracking-wider">Clerical Monopoly</span>
+               </div>
+               <!-- Card 4 -->
+               <div class="bg-white p-6 rounded-xl shadow-md parchment-border hover:shadow-lg transition-all flex flex-col justify-between">
+                   <div>
+                       <div class="w-12 h-12 rounded-lg bg-crimsonRed/10 text-crimsonRed flex items-center justify-center text-xl mb-4">
+                           <i class="fa-solid fa-lightbulb"></i>
+                       </div>
+                       <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">Rise of the Ilustrados</h3>
+                       <p class="text-xs sm:text-sm text-navyBlue/80 mb-4">
+                           The Suez Canal opened global trade. Wealthy families sent sons to Europe, exposing them to liberalism, democracy, and human rights.
+                       </p>
+                   </div>
+                   <span class="text-xs text-crimsonRed font-semibold uppercase tracking-wider">The Enlightened</span>
+               </div>
+           </div>
+       </div>
+   </section>
+   <!-- SECTION 3: RIZAL THE WRITER -->
+   <section id="literary-weapon" class="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="text-center max-w-3xl mx-auto mb-16">
+           <span class="text-xs font-semibold uppercase tracking-widest text-crimsonRed block mb-2">Section 3</span>
+           <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navyBlue">Rizal the Writer</h2>
+           <div class="w-20 h-1 bg-goldYellow mx-auto mt-4 rounded-full"></div>
+           <p class="text-navyBlue/70 mt-4 text-sm sm:text-base">"La pluma es más fuerte que la espada." Discover the two revolutionary novels that acted as a social earthquake across the Philippines.</p>
+       </div>
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+           <!-- Noli Me Tangere -->
+           <div class="bg-white p-8 rounded-2xl shadow-lg parchment-border flex flex-col justify-between">
+               <div>
+                   <div class="flex items-center justify-between mb-4">
+                       <span class="bg-crimsonRed/10 text-crimsonRed text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Published 1887</span>
+                       <span class="font-serif italic text-sm text-navyBlue/60">"Touch Me Not"</span>
+                   </div>
+                   <h3 class="font-serif text-2xl font-bold text-navyBlue mb-3">Noli Me Tangere</h3>
+                   <p class="text-sm text-navyBlue/80 mb-4 leading-relaxed">
+                       A social novel exposing systemic corruption, the abuse of power by the friars, and the tragic backwardness of colonial society. It ripped away the veil of ignorance.
+                   </p>
+                   <div class="space-y-2 mb-6 text-xs sm:text-sm text-navyBlue/80">
+                       <p><strong>Major Themes:</strong> Religious fanaticism, systemic oppression, and a sleeping society.</p>
+                       <p><strong>Key Characters:</strong> Crisóstomo Ibarra, María Clara, Padre Dámaso, Elias.</p>
+                   </div>
+               </div>
+               <button onclick="openCharacterModal('noli')" class="w-full bg-navyBlue hover:bg-navyBlue/90 text-parchment py-2.5 rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-2">
+                   <i class="fa-solid fa-users"></i> Explore Noli Characters
+               </button>
+           </div>
+           <!-- El Filibusterismo -->
+           <div class="bg-white p-8 rounded-2xl shadow-lg parchment-border flex flex-col justify-between">
+               <div>
+                   <div class="flex items-center justify-between mb-4">
+                       <span class="bg-crimsonRed/10 text-crimsonRed text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Published 1891</span>
+                       <span class="font-serif italic text-sm text-navyBlue/60">"The Reign of Greed"</span>
+                   </div>
+                   <h3 class="font-serif text-2xl font-bold text-navyBlue mb-3">El Filibusterismo</h3>
+                   <p class="text-sm text-navyBlue/80 mb-4 leading-relaxed">
+                       A darker, political sequel dedicated to the three martyred priests (Gomburza). It explores the limits of peaceful reform and the dangerous paths of radical vengeance.
+                   </p>
+                   <div class="space-y-2 mb-6 text-xs sm:text-sm text-navyBlue/80">
+                       <p><strong>Major Themes:</strong> Futility of violent extremism, disillusionment, structural change.</p>
+                       <p><strong>Key Characters:</strong> Simoun, Basilio, Isagani, Padre Salví.</p>
+                   </div>
+               </div>
+               <button onclick="openCharacterModal('fili')" class="w-full bg-navyBlue hover:bg-navyBlue/90 text-parchment py-2.5 rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-2">
+                   <i class="fa-solid fa-users"></i> Explore Fili Characters
+               </button>
+           </div>
+       </div>
+   </section>
+   <!-- SECTION 4: THE INTERACTIVE TIMELINE & HISTORICAL BRIDGE -->
+   <section id="interactive-timeline" class="py-20 bg-parchmentDark border-t border-goldYellow/30">
+       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+           <div class="text-center max-w-3xl mx-auto mb-16">
+               <span class="text-xs font-semibold uppercase tracking-widest text-crimsonRed block mb-2">Section 4</span>
+               <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navyBlue">The Interactive Timeline & Historical Bridge</h2>
+               <div class="w-20 h-1 bg-goldYellow mx-auto mt-4 rounded-full"></div>
+               <p class="text-navyBlue/70 mt-4 text-sm sm:text-base">Journey through key milestones in Rizal's life and click to reveal deep historical and global connections.</p>
+           </div>
+           <!-- Timeline Container -->
+           <div class="relative border-l-2 border-goldYellow/60 ml-4 md:ml-32 space-y-12">
+              
+               <!-- Event 1 -->
+               <div class="relative pl-8 sm:pl-10">
+                   <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-crimsonRed border-2 border-white shadow"></div>
+                   <div class="md:absolute md:-left-32 md:top-1 md:text-right md:w-24 text-xs font-bold text-crimsonRed uppercase tracking-wider">June 19, 1861</div>
+                   <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
+                       <h3 class="font-serif text-xl font-bold text-navyBlue mb-2">The Birth of a Polymath</h3>
+                       <p class="text-sm text-navyBlue/80 mb-4">
+                           José Rizal is born in Calamba, Laguna, into a transforming global era. Mid-19th-century nationalism is reshaping Europe, paving the way for future intellectual enlightenments.
+                       </p>
+                       <button onclick="toggleTimelineContext('ctx-1')" id="btn-ctx-1" class="text-xs font-semibold text-crimsonRed hover:text-crimsonHover flex items-center gap-1 focus:outline-none">
+                           <i class="fa-solid fa-plus-circle"></i> [ + Reveal Historical Context ]
+                       </button>
+                       <div id="ctx-1" class="hidden mt-4 pt-4 border-t border-gray-100 text-xs sm:text-sm text-navyBlue/80 bg-parchmentDark p-4 rounded-lg">
+                           <strong class="text-crimsonRed block mb-1">Deep Analytical Insight:</strong>
+                           Rizal's birth coincided with the modernization of global trade networks. His family's status as leaseholders on Dominican haciendas gave him a front-row seat to agrarian exploitation, grounding his global philosophy in local realities.
+                       </div>
+                   </div>
+               </div>
+               <!-- Event 2 -->
+               <div class="relative pl-8 sm:pl-10">
+                   <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-crimsonRed border-2 border-white shadow"></div>
+                   <div class="md:absolute md:-left-32 md:top-1 md:text-right md:w-24 text-xs font-bold text-crimsonRed uppercase tracking-wider">July 1892</div>
+                   <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
+                       <h3 class="font-serif text-xl font-bold text-navyBlue mb-2">Arrest and Exile in Dapitan</h3>
+                       <p class="text-sm text-navyBlue/80 mb-4">
+                           Following his return to Manila and the founding of the peaceful civic organization <em>La Liga Filipina</em>, Rizal is arrested by Spanish authorities and ordered exiled.
+                       </p>
+                       <button onclick="toggleTimelineContext('ctx-2')" id="btn-ctx-2" class="text-xs font-semibold text-crimsonRed hover:text-crimsonHover flex items-center gap-1 focus:outline-none">
+                           <i class="fa-solid fa-plus-circle"></i> [ + Reveal Historical Context ]
+                       </button>
+                       <div id="ctx-2" class="hidden mt-4 pt-4 border-t border-gray-100 text-xs sm:text-sm text-navyBlue/80 bg-parchmentDark p-4 rounded-lg">
+                           <strong class="text-crimsonRed block mb-1">Deep Analytical Insight:</strong>
+                           His exile to Dapitan was meant to silence him, but Rizal transformed a remote frontier town into a living laboratory of community development—building water systems, founding schools, and practicing free medicine.
+                       </div>
+                   </div>
+               </div>
+               <!-- Event 3 -->
+               <div class="relative pl-8 sm:pl-10">
+                   <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-crimsonRed border-2 border-white shadow"></div>
+                   <div class="md:absolute md:-left-32 md:top-1 md:text-right md:w-24 text-xs font-bold text-crimsonRed uppercase tracking-wider">Oct – Nov 1896</div>
+                   <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
+                       <h3 class="font-serif text-xl font-bold text-navyBlue mb-2">Arrest at Sea & Return to Manila</h3>
+                       <p class="text-sm text-navyBlue/80 mb-4">
+                           En route to Cuba to volunteer as a military doctor, Rizal is arrested mid-voyage, brought back to Manila, and imprisoned in Fort Santiago under charges of rebellion.
+                       </p>
+                       <button onclick="toggleTimelineContext('ctx-3')" id="btn-ctx-3" class="text-xs font-semibold text-crimsonRed hover:text-crimsonHover flex items-center gap-1 focus:outline-none">
+                           <i class="fa-solid fa-plus-circle"></i> [ + Reveal Historical Context ]
+                       </button>
+                       <div id="ctx-3" class="hidden mt-4 pt-4 border-t border-gray-100 text-xs sm:text-sm text-navyBlue/80 bg-parchmentDark p-4 rounded-lg">
+                           <strong class="text-crimsonRed block mb-1">Deep Analytical Insight:</strong>
+                           Rizal's stance on revolution was nuanced: he never opposed ultimate independence, but he famously argued that freedom without education and national unity is merely a transition to a new form of tyranny.
+                       </div>
+                   </div>
+               </div>
+               <!-- Event 4 -->
+               <div class="relative pl-8 sm:pl-10">
+                   <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-crimsonRed border-2 border-white shadow"></div>
+                   <div class="md:absolute md:-left-32 md:top-1 md:text-right md:w-24 text-xs font-bold text-crimsonRed uppercase tracking-wider">Dec 30, 1896</div>
+                   <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
+                       <h3 class="font-serif text-xl font-bold text-navyBlue mb-2">Execution at Bagumbayan</h3>
+                       <p class="text-sm text-navyBlue/80 mb-4">
+                           Executed by a Spanish firing squad at age 35. As the bullets strike, he turns his body upward to face the morning sun—symbolizing the dawn of a new nation.
+                       </p>
+                       <button onclick="toggleTimelineContext('ctx-4')" id="btn-ctx-4" class="text-xs font-semibold text-crimsonRed hover:text-crimsonHover flex items-center gap-1 focus:outline-none">
+                           <i class="fa-solid fa-plus-circle"></i> [ + Reveal Historical Context ]
+                       </button>
+                       <div id="ctx-4" class="hidden mt-4 pt-4 border-t border-gray-100 text-xs sm:text-sm text-navyBlue/80 bg-parchmentDark p-4 rounded-lg">
+                           <strong class="text-crimsonRed block mb-1">Deep Analytical Insight:</strong>
+                           Hours before his death, he hid his final poetic masterpiece, <em>Mi Último Adiós</em> (My Last Farewell), inside an alcohol cooking stove—ensuring his voice outlived his executioners.
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+   <!-- SECTION 5: WHY DOES RIZAL MATTER TODAY? -->
+   <section id="global-legacy" class="py-20 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="text-center max-w-3xl mx-auto mb-16">
+           <span class="text-xs font-semibold uppercase tracking-widest text-crimsonRed block mb-2">Section 5</span>
+           <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navyBlue">Why Does Rizal Matter Today?</h2>
+           <div class="w-20 h-1 bg-goldYellow mx-auto mt-4 rounded-full"></div>
+           <p class="text-navyBlue/70 mt-4 text-sm sm:text-base">Connecting 19th-century history to contemporary global and local civic consciousness.</p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+           <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
+               <div class="w-12 h-12 rounded-lg bg-navyBlue/10 text-navyBlue flex items-center justify-center text-xl mb-4">
+                   <i class="fa-solid fa-book-open-reader"></i>
+               </div>
+               <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">Education & Critical Thinking</h3>
+               <p class="text-xs sm:text-sm text-navyBlue/80">
+                   Proved that the greatest tool against tyranny is an educated mind, inspiring media literacy and resistance against fake news.
+               </p>
+           </div>
+           <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
+               <div class="w-12 h-12 rounded-lg bg-navyBlue/10 text-navyBlue flex items-center justify-center text-xl mb-4">
+                   <i class="fa-solid fa-scale-balanced"></i>
+               </div>
+               <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">Responsible Citizenship</h3>
+               <p class="text-xs sm:text-sm text-navyBlue/80">
+                   True patriotism is not dying for one's country, but living honestly, working ethically, and serving the community daily.
+               </p>
+           </div>
+           <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
+               <div class="w-12 h-12 rounded-lg bg-navyBlue/10 text-navyBlue flex items-center justify-center text-xl mb-4">
+                   <i class="fa-solid fa-hands-holding-child"></i>
+               </div>
+               <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">Social Justice & Freedom</h3>
+               <p class="text-xs sm:text-sm text-navyBlue/80">
+                   His writings remind every generation to stand up against systemic corruption and give a voice to the marginalized.
+               </p>
+           </div>
+           <div class="bg-white p-6 rounded-xl shadow-md parchment-border">
+               <div class="w-12 h-12 rounded-lg bg-navyBlue/10 text-navyBlue flex items-center justify-center text-xl mb-4">
+                   <i class="fa-solid fa-feather"></i>
+               </div>
+               <h3 class="font-serif text-lg font-bold text-navyBlue mb-2">The Power of Ideas</h3>
+               <p class="text-xs sm:text-sm text-navyBlue/80">
+                   Proved that a single pen fueled by truth and empathy can dismantle oppressive empires more effectively than violence.
+               </p>
+           </div>
+       </div>
+       <!-- References / Credits Slide -->
+       <div class="bg-parchmentDark rounded-2xl p-8 sm:p-12 parchment-border">
+           <h3 class="font-serif text-2xl font-bold text-navyBlue mb-6 text-center">References & Academic Citations</h3>
+           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-navyBlue/80">
+               <div class="bg-white p-4 rounded-xl shadow-sm">
+                   <strong class="text-crimsonRed block mb-1">National Historical Commission of the Philippines (NHCP)</strong>
+                   The Life and Writings of José Rizal. Official historical archives and educational dossiers.
+               </div>
+               <div class="bg-white p-4 rounded-xl shadow-sm">
+                   <strong class="text-crimsonRed block mb-1">Zaide, Gregorio F., and Sonia M. Zaide</strong>
+                   José Rizal: Life, Works, and Writings of a Genius, Writer, Scientist, and National Hero. All-Nations Publishing.
+               </div>
+               <div class="bg-white p-4 rounded-xl shadow-sm">
+                   <strong class="text-crimsonRed block mb-1">Austin Coates</strong>
+                   Rizal: Philippine Nationalist and Martyr. Oxford University Press.
+               </div>
+               <div class="bg-white p-4 rounded-xl shadow-sm">
+                   <strong class="text-crimsonRed block mb-1">The National Library of the Philippines</strong>
+                   Digital Collections: Original Manuscripts and Letters of José Rizal.
+               </div>
+           </div>
+       </div>
+   </section>
+   <!-- Footer -->
+   <footer class="bg-navyBlue text-parchment py-12 border-t-2 border-goldYellow">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+           <div>
+               <h4 class="font-serif text-xl font-bold text-goldYellow">Museo Rizal: The Global Digital Experience</h4>
+               <p class="text-xs text-parchment/70 mt-1">A Digital Multimedia Production Guide for International Audiences.</p>
+           </div>
+           <div class="text-goldYellow font-serif font-bold text-lg tracking-wider bg-navyBlue/80 px-6 py-3 rounded-xl border border-goldYellow/40 shadow-inner">
+               OT-1A Group 8
+           </div>
+       </div>
+   </footer>
+   <!-- Character Modal -->
+   <div id="character-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+       <div class="bg-parchment rounded-2xl max-w-2xl w-full p-6 sm:p-8 relative parchment-border shadow-2xl">
+           <button onclick="closeCharacterModal()" class="absolute top-4 right-4 text-navyBlue hover:text-crimsonRed text-xl">
+               <i class="fa-solid fa-xmark"></i>
+           </button>
+           <div id="modal-content">
+               <!-- Dynamically populated -->
+           </div>
+       </div>
+   </div>
+   <!-- JavaScript Logic -->
+   <script>
+       // Mobile menu toggle
+       const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+       const mobileMenu = document.getElementById('mobile-menu');
+       mobileMenuBtn.addEventListener('click', () => {
+           mobileMenu.classList.toggle('hidden');
+       });
+       // Close mobile menu on link click
+       document.querySelectorAll('.mobile-link').forEach(link => {
+           link.addEventListener('click', () => {
+               mobileMenu.classList.add('hidden');
+           });
+       });
+       // Section 1 Hats switcher data
+       const hatData = {
+           doctor: {
+               title: "Ophthalmologist & Humanitarian",
+               desc: "Specialized in ophthalmology in Europe under renowned specialists like Dr. Louis de Wecker. He practiced medicine across Europe and notably in Dapitan, treating local patients and impoverished families for free, restoring sight to many, including his own mother.",
+               bullets: [
+                   "Studied under top European eye surgeons",
+                   "Provided free medical care to the poor in Dapitan",
+                   "Performed delicate eye surgeries with extreme precision"
+               ],
+               img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80"
+           },
+           novelist: {
+               title: "Novelist & Literary Master",
+               desc: "Chose literature as a peaceful weapon (la pluma es más fuerte que la espada) to expose the cancer gnawing at Filipino society, awaken national consciousness, and demand reforms from the Spanish government through immortal works like Noli Me Tangere and El Filibusterismo.",
+               bullets: [
+                   "Authored Noli Me Tangere (1887) exposing clerical abuse",
+                   "Authored El Filibusterismo (1891) exploring political revolution",
+                   "Used biting satire and realistic social commentary"
+               ],
+               img: "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80"
+           },
+           artist: {
+               title: "Sculptor, Painter & Linguist",
+               desc: "A gifted visual artist who created remarkable sculptures (such as The Triumph of Science Over Death) and sketches. He was also a polyglot proficient in over 20 languages, seamlessly bridging global cultures.",
+               bullets: [
+                   "Created intricate clay and wood sculptures",
+                   "Mastered over 20 languages including Hebrew and Greek",
+                   "Sketched landscapes and anatomical studies across Europe"
+               ],
+               img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80"
+           },
+           scientist: {
+               title: "Scientist, Agronomist & Naturalist",
+               desc: "During his exile in Dapitan, Rizal collected botanical and zoological specimens, discovering new species of animals (like a frog, beetle, and flying dragon named after him) while introducing modern agricultural techniques.",
+               bullets: [
+                   "Discovered new species during Dapitan exile",
+                   "Designed a modern local water supply and lighting system",
+                   "Advocated for scientific agricultural practices"
+               ],
+               img: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80"
+           }
+       };
+       function switchHat(type) {
+           // Update button styles
+           document.querySelectorAll('.hat-tab').forEach(btn => {
+               if (btn.getAttribute('data-target') === type) {
+                   btn.classList.remove('bg-parchmentDark', 'text-navyBlue');
+                   btn.classList.add('bg-crimsonRed', 'text-parchment', 'shadow');
+               } else {
+                   btn.classList.remove('bg-crimsonRed', 'text-parchment', 'shadow');
+                   btn.classList.add('bg-parchmentDark', 'text-navyBlue');
+               }
+           });
+           // Update content
+           const data = hatData[type];
+           document.getElementById('hat-title').innerText = data.title;
+           document.getElementById('hat-desc').innerText = data.desc;
+           document.getElementById('hat-img').src = data.img;
+          
+           const bulletsContainer = document.getElementById('hat-bullets');
+           bulletsContainer.innerHTML = '';
+           data.bullets.forEach(bullet => {
+               const li = document.createElement('li');
+               li.className = 'flex items-center gap-2';
+               li.innerHTML = `<i class="fa-solid fa-circle-check text-crimsonRed"></i> ${bullet}`;
+               bulletsContainer.appendChild(li);
+           });
+       }
+       // Timeline context toggle
+       function toggleTimelineContext(id) {
+           const el = document.getElementById(id);
+           const btn = document.getElementById('btn-' + id);
+           if (el.classList.contains('hidden')) {
+               el.classList.remove('hidden');
+               btn.innerHTML = '<i class="fa-solid fa-minus-circle"></i> [ - Hide Historical Context ]';
+           } else {
+               el.classList.add('hidden');
+               btn.innerHTML = '<i class="fa-solid fa-plus-circle"></i> [ + Reveal Historical Context ]';
+           }
+       }
+       // Character modal data
+       const characterData = {
+           noli: {
+               title: "Noli Me Tangere (1887) - Character Spotlight",
+               chars: [
+                   { name: "Crisóstomo Ibarra", role: "The idealistic reformer seeking education and peaceful progress for his people." },
+                   { name: "María Clara", role: "The tragic symbol of the pure Filipina and the colonized nation." },
+                   { name: "Padre Dámaso", role: "The corrupt, arrogant friar representing clerical tyranny." },
+                   { name: "Elias", role: "The revolutionary skeptic who believes reform from within is impossible." }
+               ]
+           },
+           fili: {
+               title: "El Filibusterismo (1891) - Character Spotlight",
+               chars: [
+                   { name: "Simoun", role: "Ibarra returned in disguise as a wealthy, vengeful jeweler plotting armed rebellion." },
+                   { name: "Basilio", role: "The student whose tragic suffering mirrors the broken hopes of the youth." },
+                   { name: "Isagani", role: "The idealistic student poet caught between love and nationalism." },
+                   { name: "Padre Salví", role: "The cunning and sinister cleric representing religious hypocrisy." }
+               ]
+           }
+       };
+       function openCharacterModal(type) {
+           const data = characterData[type];
+           let html = `<h3 class="font-serif text-2xl font-bold text-navyBlue mb-4">${data.title}</h3><div class="space-y-4">`;
+           data.chars.forEach(c => {
+               html += `<div class="bg-white p-4 rounded-xl shadow-sm border border-goldYellow/40">
+                   <strong class="text-crimsonRed font-serif text-lg block mb-1">${c.name}</strong>
+                   <p class="text-xs sm:text-sm text-navyBlue/80">${c.role}</p>
+               </div>`;
+           });
+           html += `</div>`;
+           document.getElementById('modal-content').innerHTML = html;
+           document.getElementById('character-modal').classList.remove('hidden');
+       }
+       function closeCharacterModal() {
+           document.getElementById('character-modal').classList.add('hidden');
+       }
+       // Close modal on outside click
+       window.addEventListener('click', (e) => {
+           const modal = document.getElementById('character-modal');
+           if (e.target === modal) {
+               closeCharacterModal();
+           }
+       });
+   </script>
 </body>
 </html>
+
+
+
